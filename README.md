@@ -63,7 +63,7 @@ for all likelihood, impact, and risk fields.
 | Unauthorized disclosure |                |            |          |
 | Obtain sensitive data   |                |            |          |
 | Obfuscate actions       |                |            |          |
-| **non-adversarial**     | ---            | ---        | ---      |
+| ***non-adversarial***   | ---            | ---        | ---      |
 | Mishandling data        |                |            |          |
 | Communications contention|                |            |          |
 | Unreadable display      |                |            |          |
