@@ -5,22 +5,27 @@
 Table of contents:
 * [Background](LAB4-INSTRUCTIONS.md#background)
 * [Objectives](LAB4-INSTRUCTIONS.md#objectives)
+* [Rubric](LAB4-INSTRUCTIONS.md#rubric)
 * [Preparation](LAB4-INSTRUCTIONS.md#preparation)
-* [Task 1: Crafting Packets](LAB4-INSTRUCTIONS.md#task-1-crafting-packets)
-* [Task 2: A Shell Game](LAB4-INSTRUCTIONS.md#task-2-a-shell-game)
-* [Task 3: Iptables](LAB4-INSTRUCTIONS.md#task-3-iptables)
-* [Task 4: Any Port ina Storm](LAB4-INSTRUCTIONS.md#task-4-any-port-in-a-storm)
+* [Task 1: Home sweet home](LAB4-INSTRUCTIONS.md#task-1-home-sweet-home)
+* [Task 2: Guess who](LAB4-INSTRUCTIONS.md#task-2-guess-who)
+* [Task 3: Eventually](LAB4-INSTRUCTIONS.md#task-3-eventually)
+* [Task 4: Impact](LAB4-INSTRUCTIONS.md#task-4-impact)
+* [Task 5: Risky business](LAB4-INSTRUCTIONS.md#task-5-risky-business)
 
 ---
 
 #### Background and Objectives
 
-In this lab student will perform a risk analysis of their home network.
+In this lab student will perform a risk analysis of their home network and online presence.
 
 Students should become familiar with the following:
 
 * identifying a personal inventory / attack vectors
 * identify threat actors
+* identify threat events
+* assign impact and likeliness scores to threat events
+* determine an overall risk profile of their organization
 
 In preparation for this you should read chapters 1 and 3 of the 
 [NIST 800-30](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf)
@@ -28,15 +33,16 @@ special publication.
 
 ---
 
-#### Rubrik
+#### Rubric
 | Item | # Points|
 | --- | --- |
 | 10 commits | 10 |
 | Good markdown style | 20 |
 | Task 1 | 30 |
 | Task 2 | 30 | 
-| Task 3 | 20 |
+| Task 3 | 30 |
 | Task 4 | 30 |
+| Task 5 | 30 |
 
 ---
 

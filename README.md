@@ -56,18 +56,19 @@ for all likelihood, impact, and risk fields.
 | Network recon           |                |            |          |
 | Network Sniffing        |                |            |          |
 | Spear Phishing          |                |            |          |
-| Exploit config          |                |            |          |
-| Exploit new vuln        |                |            |          |
+| Exploit IT configuration|                |            |          |
+| Exploit new vulnerability|                |            |          |
 | Denial of Service       |                |            |          |
-| Integrity loss          |                |            |          |
+| Integrity loss of data  |                |            |          |
 | Unauthorized disclosure |                |            |          |
 | Obtain sensitive data   |                |            |          |
 | Obfuscate actions       |                |            |          |
+| **non-adversarial**     | ---            | ---        | ---      |
 | Mishandling data        |                |            |          |
-| Communications contention |                |            |          |
+| Communications contention|                |            |          |
 | Unreadable display      |                |            |          |
 | Natural disaster        |                |            |          |
-| Software vuln           |                |            |          |
+| Software vulnerability  |                |            |          |
 | Disk Error              |                |            |          |
 
 ---
