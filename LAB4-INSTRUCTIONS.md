@@ -3,13 +3,12 @@
 ### The Terminalator
 
 Table of contents:
-* [Background](LAB3-INSTRUCTIONS.md#background)
-* [Objectives](LAB3-INSTRUCTIONS.md#objectives)
-* [Preparation](LAB3-INSTRUCTIONS.md#preparation)
-* [Task 1: Crafting Packets](LAB3-INSTRUCTIONS.md#task-1-crafting-packets)
-* [Task 2: A Shell Game](LAB3-INSTRUCTIONS.md#task-2-a-shell-game)
-* [Task 3: Iptables](LAB3-INSTRUCTIONS.md#task-3-iptables)
-* [Task 4: Any Port ina Storm](LAB3-INSTRUCTIONS.md#task-4-any-port-in-a-storm)
+* [Background](LAB4-INSTRUCTIONS.md#background)
+* [Objectives](LAB4-INSTRUCTIONS.md#objectives)
+* [Preparation](LAB4-INSTRUCTIONS.md#preparation)
+* [Task 1: A Shell Game](LAB4-INSTRUCTIONS.md#task-1-a-shell-game)
+* [Task 2: Iptables](LAB4-INSTRUCTIONS.md#task-2-iptables)
+* [Task 3: Any Port in a Storm](LAB4-INSTRUCTIONS.md#task-3-any-port-in-a-storm)
 
 ---
 
@@ -36,14 +35,19 @@ Students should become familiar with the following:
 | 10 commits | 10 |
 | Good markdown style | 20 |
 | Task 1 | 30 |
-| Task 2 | 20 | 
+| Task 2 | 30 | 
 | Task 3 | 30 |
+| EC     | 30 |
 
 ---
 
-#### Preparation
+### Preparation
 
-This lab will require all work be done in AWS.  Please deploy the below instance and work inside the lab.
+This lab will require all work be done in AWS!  For those of you unfamiliar with AWS please see the following guide:
+
+* [AWS Guide for CEG 3400](AWS.md) 
+
+Please deploy the below instance and work inside the lab.
 
 * [CEG 3400 Lab 4 AWS link](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ceg3400Lab&templateURL=https:%2F%2Fwsu-cecs-cf-templates.s3.us-east-2.amazonaws.com%2Fcourse-templates%2Fceg3400-mek.yml)
 * Identify the IP address of the running EC2 instance created [in the EC2
@@ -99,4 +103,13 @@ block ***ALL OTHER PORTS***.
 before attempting this task.  If you lock yourself out that is OK, just answer all 
 questions for this task.
 
+---
+
+## Extra Credit
+
+Using scapy (which may need to be installed on your AWS system), capture a packet using `sniff()` 
+that contains either a command being sent to your malicious shell, or a response to a command.
+
+Print the contents of the packet using `show()` and describe what the command/response is.  Include
+this `show()` and any other data used in determining the contents of the packet.
 
