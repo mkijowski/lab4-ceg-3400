@@ -3,178 +3,100 @@
 ### The Terminalator
 
 Table of contents:
-* [Background](LAB4-INSTRUCTIONS.md#background)
-* [Objectives](LAB4-INSTRUCTIONS.md#objectives)
-* [Rubric](LAB4-INSTRUCTIONS.md#rubric)
-* [Preparation](LAB4-INSTRUCTIONS.md#preparation)
-* [Task 1: Home sweet home](LAB4-INSTRUCTIONS.md#task-1-home-sweet-home)
-* [Task 2: Guess who](LAB4-INSTRUCTIONS.md#task-2-guess-who)
-* [Task 3: Eventually](LAB4-INSTRUCTIONS.md#task-3-eventually)
-* [Task 4: Impact](LAB4-INSTRUCTIONS.md#task-4-impact)
-* [Task 5: Risky business](LAB4-INSTRUCTIONS.md#task-5-risky-business)
+* [Background](LAB3-INSTRUCTIONS.md#background)
+* [Objectives](LAB3-INSTRUCTIONS.md#objectives)
+* [Preparation](LAB3-INSTRUCTIONS.md#preparation)
+* [Task 1: Crafting Packets](LAB3-INSTRUCTIONS.md#task-1-crafting-packets)
+* [Task 2: A Shell Game](LAB3-INSTRUCTIONS.md#task-2-a-shell-game)
+* [Task 3: Iptables](LAB3-INSTRUCTIONS.md#task-3-iptables)
+* [Task 4: Any Port ina Storm](LAB3-INSTRUCTIONS.md#task-4-any-port-in-a-storm)
 
 ---
 
 #### Background and Objectives
 
-In this lab student will perform a risk analysis of their home network and online presence.
+In this lab you will learn about some basic (and more advanced) network manipulation 
+tools by catpuring and creating packets, and exploring a well documented type of 
+attack.
+
+This lab assumes you have a basic understanding of networking, IP addresses, ports
+and packets (from CEG-2350 and what was covered in class).
 
 Students should become familiar with the following:
 
-* identifying a personal inventory / attack vectors
-* identify threat actors
-* identify threat events
-* assign impact and likeliness scores to threat events
-* determine an overall risk profile of their organization
-
-In preparation for this you should read chapters 1 and 3 of the 
-[NIST 800-30](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf)
-special publication.
+* creating, sending, and capturing packets with Scapy
+* abusing netcat and pipes
+* configuring iptables (firewalls)
 
 ---
 
-#### Rubric
+#### Rubrik
 | Item | # Points|
 | --- | --- |
 | 10 commits | 10 |
 | Good markdown style | 20 |
 | Task 1 | 30 |
-| Task 2 | 30 | 
+| Task 2 | 20 | 
 | Task 3 | 30 |
-| Task 4 | 30 |
-| Task 5 | 30 |
 
 ---
 
 #### Preparation
 
-This lab will require all work be done on your home network.
+This lab will require all work be done in AWS.  Please deploy the below instance and work inside the lab.
 
-Purpose of this assessment: to familiarize students with basic risk assessment 
-vocabulary and practices, and to identify any personal high risk items in need of 
-mitigation.  Since this is an initial assessment the main goal is to establish a 
-baseline assessment of risk as well as identify threats, vulnerabilities, and their
-likely impact on you as a student.  For the purpose of this lab, *the organization* 
-is a not so fictitious **Your Name Inc.** and the primary goal of this organization is
-for you to graduate.
-
-Scope of this assessment: This assessment should apply primarily to the student
-submitting this lab.  Any other users of the same network can be included as part
-of this assessment.
-
-This risk assessment should include all devices owned by the student that are a part
-of that student's home network.  It can include any other devices on the network
-that you have obtained permission to include in this document.
-
-Assumptions and constraints:
-Threat sources as discussed in class:
-  
-  * Malicious software
-  * Software Bugs
-  * Insider Threats (trusted person with or without intent to do harm)
-  * Outsider threats including ALL of the following:
-    * Hackers
-    * Crackers
-    * Script Kiddie
-    * Cyber Criminals
-    * Cyber Terrorists
-    * Hacktivists
-    * State-Sponsored attackers
+* [CEG 3400 Lab 4 AWS link](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ceg3400Lab&templateURL=https:%2F%2Fwsu-cecs-cf-templates.s3.us-east-2.amazonaws.com%2Fcourse-templates%2Fceg3400-mek.yml)
+* Identify the IP address of the running EC2 instance created [in the EC2
+  page](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:)
 
 ---
 
-### Task 1: `/home` sweet `/home`
+## Task 1: A Shell Game
 
-Identify the data and resources you are protecting.  This involves three steps:
+You find the following command in the command history on one of your systems:
 
-1. With permission from the network owner, scan your network with `nmap` and 
-   see how many devices are on your network (do not fully scan all systems, 
-   just get a count/list).  If you live on campus or anywhere else that you do NOT have permission, 
-   contact matthew.kijowski@wright.edu for alternate assignment.
-2. Make a list of all online accounts you hold that have either a 
-   credit card attached to them, or data for/about you beyond basic 
-   directory information (name, email, title, general location are all directory info).  If you prefer, keep this list private and provide a count of the accounts.
-3. List all social media platforms you currently use.  Also, if you perfer, keep this list private and simply provide a count of the accounts ;) .
-4. List any personal electronic devices that you own that may not have shown 
-   up in an nmap scan.  Wearable electronics and home automation devices might be included here.
+```
+rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc -l 1234 >/tmp/f
+```
 
-With the above information gathered, answer all questions in `README.md`
+Investigate this command by running it on your AWS system.  While it is running scan the
+***PUBLIC*** IP address of your AWS instance.
 
----
+A security researcher mentioned that an outbreak of Bind and Reverse shells have been cropping 
+up on your network recently.  Do some research on ***Bind Shells*** and ***Reverse Shells***.
 
-### Task 2: Guess who
+After you have an understanding of what a Bind shell and reverse shell are see if you can 
+make this one respond!
 
-Potential threat vectors incude the following:
-  
-* Malicious software
-* Software Bugs
-* Insider Threats (trusted person with or without intent to do harm)
-* Outsider threats including ALL of the following:
-  * Hackers
-  * Crackers
-  * Script Kiddie
-  * Cyber Criminals
-  * Cyber Terrorists
-  * Hacktivists
-  * State-Sponsored attackers
+Hint: Try connecting to the opened port with `nc` from a different system.
 
-Of these we are most interested in Malicious software, software bugs, and all outsider threats.
-
-Lookup 3 pieces of locally installed sofware on one of your primary 
-computing devices that are critical for your organization to complete its
-mission (you graduating).  
-
-Look each of these up in the [NVD CPE Search](https://nvd.nist.gov/products/cpe/search),
-for this exercise look at several recent versions of the software in question.
-
-With this information gathered, answer all questions in `README.md`.
+Again, answer all questions in `README.md`.
 
 ---
 
-### Task 3: Eventually
+## Task 2: Iptables
 
-Read through Table E-2 and E-3. Look up the following Threat Events and state their relevance
-to your organization (see table E-4) and the likelihood of threat event occuring (table G-2).
+Clearly the previous command should not be left running.  But we can do better.
 
-Use a 0-10 scale.
+Using `iptables` block all incoming access to the malicious shell port on your AWS system.
 
-#### Adversarial
-
-* Perform perimeter network recon/scanning
-* Perform network sniffing
-* Craft spear phishing attack
-* Exploit poorly configured or unauthorized information systems exposed to the internet
-* Exploit recently discovered vulnerabilities
-* Conduct simple Denial of Service attacks
-* Cause integrity loss by injecting false but believable data into org info systems
-* Cause unauthorized disclosure and/or unavailability by spilling sensitive information
-* Obtain sensitive data/info from publicly accessible information systems
-* Obfuscate adversary actions
-
-#### Non-adversarial
-
-* Mishandling of critical and/or sensitive information by authorized users
-* Communications contention
-* Unreadable display
-* Natural disaster at primary facility
-* Introduction of vulnerabilities into software products
-* Disk error
+Hint: you can craft a single `iptables` command or you can use `iptables-save` 
+and `iptables-restore` to simplify saving the full firewall rules list.
 
 ---
 
-### Task 4: Impact 
+## Task 3: Any Port in a Storm
 
-Measure the impact of each of the above threat events using the 0-10 scale found in 
-table H-3.
+After successfully blocking that shell your crack team of security researchers start 
+seeing more malicious shells running on other ports.  Before you can start yelling at
+your co-workers you need to lock your system down.
 
+Identify all NEEDED ports for your standard communications with this server (SSH) and 
+block ***ALL OTHER PORTS***.
 
----
-
-### Task 5: Risky business
-
-Using table I-2 assign a level of risk (0-10) based on the *Likelihood* and *Impact* 
-of each threat event.
-
-Answer all questions for tasks 3-5 in the `README.md`
+***Hint:*** you will likely mess this up when deploying, be sure to document and 
+`git commit` / `git push` all files including your final task 4 iptables-rules file 
+before attempting this task.  If you lock yourself out that is OK, just answer all 
+questions for this task.
 
 
