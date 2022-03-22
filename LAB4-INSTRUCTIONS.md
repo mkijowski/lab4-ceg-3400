@@ -43,7 +43,7 @@ Students should become familiar with the following:
 
 ### Preparation
 
-This lab will require all work be done in AWS!  For those of you unfamiliar with AWS please see the following guide:
+This lab will require some work be done in AWS!  For those of you unfamiliar with AWS please see the following guide:
 
 * [AWS Guide for CEG 3400](AWS.md) 
 
@@ -72,9 +72,11 @@ up on your network recently.  Do some research on ***Bind Shells*** and ***Rever
 After you have an understanding of what a Bind shell and reverse shell are see if you can 
 make this one respond!
 
-Hint: Try connecting to the opened port with `nc` from a different system.
+Hint: Try connecting to the opened port with `nc` from a different system.  (We will be covering `nc` usage on Thursday, but it is a simple command if you want to tackle it before then.
 
-Again, answer all questions in `README.md`.
+Answer all questions in `README.md`.
+
+**You may want to take a look at the Extra Credit section below prior to moving on with the lab.**
 
 ---
 
@@ -112,4 +114,7 @@ that contains either a command being sent to your malicious shell, or a response
 
 Print the contents of the packet using `show()` and describe what the command/response is.  Include
 this `show()` and any other data used in determining the contents of the packet.
+
+**All EC questions must be answered to recieve any extra credit.**  I will not be grading partially finished EC.
+
 
