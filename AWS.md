@@ -10,7 +10,7 @@
 
 1. Open email from AWS Academy to accept invite to course.
    - Email your course instructor if you did not recieve an email.
-2. You will be joined to a Canvas course called AWS Academy Learner Lab - Foundation Services
+2. You will be joined to a Canvas course called **AWS Academy Learner Lab - Foundation Services**
    - If you are in multiple courses using AWS, you may need to get used to the "Dashboard" to spend funds in the correct course.
 3. Within the course, click **Modules**
 4. Click **Learner Lab - Foundational Services**
