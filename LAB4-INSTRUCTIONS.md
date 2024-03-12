@@ -37,7 +37,7 @@ Students should become familiar with the following:
 | Task 1 | 30 |
 | Task 2 | 30 | 
 | Task 3 | 30 |
-| EC     | 30 |
+| EC     | 20 |
 
 ---
 
