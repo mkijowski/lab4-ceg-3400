@@ -23,9 +23,9 @@ and packets (from CEG-2350 and what was covered in class).
 
 Students should become familiar with the following:
 
-* creating, sending, and capturing packets with Scapy
-* abusing netcat and pipes
 * configuring iptables (firewalls)
+* abusing netcat and pipes
+* creating, sending, and capturing packets with Scapy
 
 ---
 
@@ -76,15 +76,13 @@ Hint: Try connecting to the opened port with `nc` from a different system.  (We 
 
 Answer all questions in `README.md`.
 
-**You may want to take a look at the Extra Credit section below prior to moving on with the lab.**
-
 ---
 
 ## Task 2: Iptables
 
 Clearly the previous command should not be left running.  But we can do better.
 
-Using `iptables` block all incoming access to the malicious shell port on your AWS system.
+Using `iptables` and the `REJECT` action, block all incoming access to the malicious shell port on your AWS system.
 
 Hint: you can craft a single `iptables` command or you can use `iptables-save` 
 and `iptables-restore` to simplify saving the full firewall rules list.
@@ -98,12 +96,11 @@ seeing more malicious shells running on other ports.  Before you can start yelli
 your co-workers you need to lock your system down.
 
 Identify all NEEDED ports for your standard communications with this server (SSH) and 
-block ***ALL OTHER PORTS***.
+block ***ALL OTHER PORTS*** in the same manner as task 2 using the `REJECT` action.
 
 ***Hint:*** you will likely mess this up when deploying, be sure to document and 
 `git commit` / `git push` all files including your final task 4 iptables-rules file 
-before attempting this task.  If you lock yourself out that is OK, just answer all 
-questions for this task.
+before attempting this task.  If you lock yourself out that is OK, a reboot should fix it.
 
 ---
 
